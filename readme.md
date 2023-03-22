@@ -1,6 +1,6 @@
 # Acknowledgements
 
-Widgets created based on the [Magneton](https://github.com/rit-git/magneton) template.
+Widgets created based on the [Magneton](https://github.com/megagonlabs/magneton) template.
 
 # Widget Examples
 
