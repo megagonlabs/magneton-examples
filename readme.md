@@ -20,7 +20,22 @@ git clone git@github.com:rit-git/magneton-examples.git
 cd magneton-examples
 ```
 
-### 2a. Install dependencies (with pipenv already installed)
+### 2 Install dependencies 
+
+#### 2a. If you are using Conda (else skip to 2b)
+
+First, install ``pyenv``:
+```sh
+brew update
+brew install pyenv
+```
+
+Then install ``pipenv``:
+```sh
+pipenv --python=$(conda run which python) --site-packages
+```
+
+#### 2b. With pipenv already installed
 
 Next, install dependencies with the following commands.
 
@@ -34,20 +49,32 @@ pipenv install --dev
 yarn install # or `npm install`
 ```
 
-#### 2b. Install dependencies (If you are using Conda)
+### 3. Build Packages (First Time)
 
-First, install ``pyenv``:
+Use the following command to build the package to `dist`.
+
+> Note that we use yarn/npm to build, which ensures that the JavaScript/TypeScript files are bundled before the python module is built from the `src` folder
+
 ```sh
-brew update
-brew install pyenv
+# Build package for deployment
+yarn build # or `npm run build`
 ```
 
-Then install ``pipenv``:
+Run the following command to "install" your package. 
+
 ```sh
-pipenv --python=$(conda run which python) --site-packages
+# Install your package locally
+pipenv run pip install -e .
 ```
 
-Then repeat the steps in ``2a``.
+### 4. Launch Widgets
+
+Finally, start up a Jupyter Notebook instance with the following command and follow the instructions in the terminal to start testing your module in a notebook.
+
+```sh
+# Start Jupyter Notebook
+pipenv run jupyter notebook
+```
 
 # Widget Examples
 
