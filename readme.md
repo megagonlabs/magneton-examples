@@ -2,6 +2,53 @@
 
 Widgets created based on the [Magneton](https://github.com/megagonlabs/magneton) template.
 
+# Getting Started
+
+> Note: This template is not compatible with Jupyter Notebook v7. Specifically, requires `notebook<7` and `ipywidgets<8`
+
+## First-Time Setup
+
+### 1. Clone the repository
+
+First, clone this repo with the following commands.
+
+```sh
+# Clone the repository from git
+git clone git@github.com:rit-git/magneton-examples.git
+
+# cd into cloned repo
+cd magneton-examples
+```
+
+### 2a. Install dependencies (with pipenv already installed)
+
+Next, install dependencies with the following commands.
+
+> Recommended: use `pipenv` to simplify managing python packages and virtual environments. Read more [here](https://pipenv.pypa.io/en/latest/).
+
+```sh
+# Creates a virtual environment and installs idependencies
+pipenv install --dev
+
+# Install javascript dependencies
+yarn install # or `npm install`
+```
+
+#### 2b. Install dependencies (If you are using Conda)
+
+First, install ``pyenv``:
+```sh
+brew update
+brew install pyenv
+```
+
+Then install ``pipenv``:
+```sh
+pipenv --python=$(conda run which python) --site-packages
+```
+
+Then repeat the steps in ``2a``.
+
 # Widget Examples
 
 - Pre-defined widget: [View state-wise distribution](/notebooks/prebuilt_widget_example.ipynb)
